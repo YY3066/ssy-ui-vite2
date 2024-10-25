@@ -6,14 +6,14 @@ import { defineConfig } from 'vite'
 // import { presetUno, presetAttributify, presetIcons } from "unocss";
 import UnoCSS from 'unocss/vite'
 
-const rollupOptions = {
-  external: ['vue', 'vue-router'],
-  output: {
-    globals: {
-      vue: 'Vue',
-    },
-  },
-}
+// const rollupOptions = {
+//   external: ['vue', 'vue-router'],
+//   output: {
+//     globals: {
+//       vue: 'Vue',
+//     },
+//   },
+// }
 
 export default defineConfig({
   resolve: {
@@ -40,7 +40,11 @@ export default defineConfig({
   //   },
   // },
   build: {
-    rollupOptions,
+    rollupOptions: {
+      output: {
+        exports: 'named',
+      },
+    },
     minify: 'terser', // boolean | 'terser' | 'esbuild'
     sourcemap: true, // 输出单独 source文件
     reportCompressedSize: true, // 生成压缩大小报告

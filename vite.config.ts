@@ -26,17 +26,30 @@ export default defineConfig({
     vueJsx(),
     UnoCSS(),
   ],
+  // build: {
+  //   rollupOptions,
+  //   minify: false,
+  //   cssCodeSplit: true,
+  //   // 添加库模式配置
+  //   lib: {
+  //     entry: './src/entry.ts',
+  //     name: 'SSYUI',
+  //     fileName: 'ssy-ui',
+  //     // 导出模块格式
+  //     formats: ['es', 'umd', 'iife'],
+  //   },
+  // },
   build: {
     rollupOptions,
-    minify: false,
+    minify: 'terser', // boolean | 'terser' | 'esbuild'
+    sourcemap: true, // 输出单独 source文件
+    reportCompressedSize: true, // 生成压缩大小报告
     cssCodeSplit: true,
-    // 添加库模式配置
     lib: {
       entry: './src/entry.ts',
       name: 'SSYUI',
       fileName: 'ssy-ui',
-      // 导出模块格式
-      formats: ['es', 'umd', 'iife'],
+      formats: ['es', 'umd', 'iife'], // 导出模块类型
     },
   },
   test: {

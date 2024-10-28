@@ -1,9 +1,9 @@
-import type { PropType } from 'vue'
+import type { ExtractPropTypes, PropType } from 'vue'
 import { defineComponent } from 'vue'
 import 'uno.css'
 
-export type ISize = 'small' | 'medium' | 'large'
-export type IColor =
+export type ButtonSize = 'small' | 'medium' | 'large'
+export type ButtonColor =
   | 'black'
   | 'gray'
   | 'red'
@@ -14,14 +14,14 @@ export type IColor =
   | 'purple'
   | 'pink'
 
-export const props = {
+export const buttonProps = {
   size: {
-    type: String as PropType<ISize>,
+    type: String as PropType<ButtonSize>,
     default: 'medium',
   },
 
   color: {
-    type: String as PropType<IColor>,
+    type: String as PropType<ButtonColor>,
     default: 'blue',
   },
 
@@ -41,9 +41,11 @@ export const props = {
   },
 } as const
 
+export type ButtonProps = ExtractPropTypes<typeof buttonProps>
+
 export default defineComponent({
   name: 'SButton',
-  props,
+  props: buttonProps,
   setup(props, { slots }) {
     const size = {
       small: {

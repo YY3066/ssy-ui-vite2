@@ -1,14 +1,61 @@
-# ssy-ui-vite
+<p align="center">
+<div style="width:150px;margin:auto;">
+<div align="center">
+  <img src="https://gitee.com/yuesehenmei/markdown/raw/master/aasets/xiaohonghua.png">
+</div>
+</div>
+</p>
+<h1 align="center">SSY-UI-VITE</h1>
+<p align="center">
+  基于 Vite 栈的前端工程化实践
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/WinterBreeze052/ssy-ui-vite?color=red">
+</p>
+
+## Features
+
+- 一基于 Vue 框架
+- 支持JSX 与Vue单文件组件
+- Jest + Vue3 plugins实现单元测试
+- Eslint + Prettier + Husky 语法检查
+- 采用Rollup构建
+- Vitepress + Vercel 文档网站搭建
+- 基于ActionCI实现持续集成与交付
+
+## Install
+
+```bash
+import Vue from "vue"
+import SSYUI from "ssy-ui"
+
+const App = {
+  template:`
+  <SButton color="blue">主要按钮</SButton>
+  `,
+};
+
+createApp(App)
+  .use(SSYUI)
+  .mount('#app');
+```
+
+## Quick Start
+
+如果希望尽快上手，可以访问[🔨 SSY-UI-VITE 是什么? | VitePress](https://ssy-ui-vite-bay.vercel.app/)
+
+## log
 
 以一种偏向自动化、脚本化的方式，结合一些工具的能力，解决一些纯人工处理的低效、非标准的问题，来有效的提升效率、质量和性能。
 
 https://doc.riddler.wiki/widget/
 
-## 2024-10-18
+#### 2024-10-18
 
 完成文档1-4
 
-### 主要内容
+##### 主要内容
 
 - 1.学习前端工程化就从搭建组件库开始
 
@@ -18,11 +65,11 @@ https://doc.riddler.wiki/widget/
 
 - 4.文档建设：创建示例功能的文档网站
 
-## 2024-10-25
+#### 2024-10-25
 
 完成文档5-9
 
-### 主要内容
+##### 主要内容
 
 - 5.单元测试 ： 搭建 Vitest 的单元测试环境
 
@@ -34,7 +81,7 @@ https://doc.riddler.wiki/widget/
 
 - 9.开发许可证：维护自己的版权
 
-### 其他
+##### 其他
 
 ###### 1）出现下面错误
 
@@ -68,3 +115,16 @@ pnpm add --save-dev @commitlint/cli @commitlint/config-conventional
 ###### 3）出现Unocss样式不生效
 
 解决方法：调整class顺序，将固定样式前置
+
+#### 2024-10-28
+
+完成文档10-13
+
+##### 主要内容
+
+在demo/button.html中
+将
+`.use(Button)`
+替换为
+`.component('SButton', Button)`
+可以成功运行

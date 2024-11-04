@@ -32,3 +32,6 @@ coverage/
 *.log
 *.tgz
 *.zip
+
+#coverage
+coverage/

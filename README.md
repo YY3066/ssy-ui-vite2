@@ -128,3 +128,6 @@ pnpm add --save-dev @commitlint/cli @commitlint/config-conventional
 替换为
 `.component('SButton', Button)`
 可以成功运行
+
+##### 欢迎提PR
+一起加入项目
